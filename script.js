@@ -1,5 +1,5 @@
 
-//Declare a variable to store the searched city
+//Declare variables to store the searched city
 var city="";
 // variable declaration
 var searchCity = $("#search-city");
@@ -30,9 +30,9 @@ function displayWeather(event){
         currentWeather(city);
     }
 }
-// Here we create the AJAX call
+//  create the AJAX call
 function currentWeather(city){
-    // Here we build the URL so we can get a data from server side.
+    // build the URL to get a data from server side.
     var queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
     $.ajax({
         url:queryURL,
@@ -84,7 +84,7 @@ function currentWeather(city){
 
     });
 }
-    // This function returns the UVIindex response.
+    // returns the UVIindex response.
 function UVIndex(ln,lt){
     //lets build the url for uvindex.
     var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
@@ -96,7 +96,7 @@ function UVIndex(ln,lt){
             });
 }
     
-// Here we display the 5 days forecast for the current city.
+// display the 5 days forecast for the current city.
 function forecast(cityid){
     var dayover= false;
     var queryforcastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
@@ -166,15 +166,6 @@ $("#search-button").on("click",displayWeather);
 $(document).on("click",invokePastSearch);
 $(window).on("load",loadlastCity);
 $("#clear-history").on("click",clearHistory);
-
-
-
-
-
-
-
-
-
 
 
 
